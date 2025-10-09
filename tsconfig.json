@@ -34,9 +34,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "public/assets/scripts/translation.js",
-    "lib/hooks/use-google.js",
-    "app/cart/checkout/page.tsx"
+
+    "app/cart/checkout/page.tsx",
+    "components/shared/camera/camera.jsx",
+    "components/shared/qr-scanner/qr-scanner.tsx"
   ],
   "exclude": ["node_modules"]
 }

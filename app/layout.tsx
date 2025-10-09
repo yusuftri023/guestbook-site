@@ -3,6 +3,7 @@ import Footer from "@/components/layout/footer";
 import ClientProviders from "../components/layout/ClientProviders";
 import { inter, poppins } from "./fonts";
 import "./globals.css";
+import Script from "next/script";
 
 // export const metadata: Metadata = {
 //   title: "Jobs By Apoteker+",
@@ -48,6 +49,11 @@ export default async function RootLayout({
       <body
         className={` ${poppins.className} ${inter.variable} h-screen w-full bg-white`}
       >
+        <Script
+          src="https://printjs-4de6.kxcdn.com/print.min.js"
+          strategy="beforeInteractive"
+        />
+
         <ClientProviders>
           {children}
           <Footer />
