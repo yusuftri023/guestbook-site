@@ -115,11 +115,6 @@ export default function Admin() {
             className="space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
-              console.log(e.currentTarget.Nama.value);
-              console.log(e.currentTarget.Lokasi.value);
-              console.log(e.currentTarget.NomorHP.value);
-              console.log(e.currentTarget.TerimaAmplop.checked);
-              console.log(modalMode);
               if (modalMode === "add") {
                 axios
                   .post("/api/admin/attendee", {
@@ -311,36 +306,36 @@ export default function Admin() {
                     <button
                       onClick={() => {
                         const message = `
-                      Assalamu’alaikum Warahmatullahi Wabarakatuh
-                      Yth. Bapak/Ibu/Saudara/i,
-                      ${attendee.name}
+Assalamu’alaikum Warahmatullahi Wabarakatuh
+Yth. Bapak/Ibu/Saudara/i,
+${attendee.name}
 
-                      Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan turut memberikan doa restu secara langsung dalam acara Ngunduh Mantu:
+Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan turut memberikan doa restu secara langsung dalam acara Ngunduh Mantu:
 
-                      apt. ARIFFIO DAVA PRIHANDOYO, S.Farm
-                      Putra dari Bapak drh. H. Agus Dwiharjoto & Ibu drh. Hj. Siti Hanifah
+apt. ARIFFIO DAVA PRIHANDOYO, S.Farm
+Putra dari Bapak drh. H. Agus Dwiharjoto & Ibu drh. Hj. Siti Hanifah
 
-                      dan
+dan
 
-                      apt. ANGGHIA CALVINA IZUMI, S.Farm
-                      Putri dari Bapak H. Ade Herlambang & Ibu Hj. Eka Rini Yulianti, A.Md.
+apt. ANGGHIA CALVINA IZUMI, S.Farm
+Putri dari Bapak H. Ade Herlambang & Ibu Hj. Eka Rini Yulianti, A.Md.
 
-                      Yang akan diselenggarakan pada:
-                      � Sabtu, 25 Oktober 2025
-                      � 19.00 - 22.00 WIB
-                      � Agis Restaurant, Kota Surabaya
+Yang akan diselenggarakan pada:
+� Sabtu, 25 Oktober 2025
+� 19.00 - 22.00 WIB
+� Agis Restaurant, Kota Surabaya
 
-                      Mohon dapat mengakses undangan dan mengisi konfirmasi kehadiran pada link berikut:
-                      https://invitation.evolvion.biz.id/${attendee.is_amplop ? "digital-wedding-invitation" : "digital-wedding-invitation2"}?nomorhp=${attendee.phone_number}
+Mohon dapat mengakses undangan dan mengisi konfirmasi kehadiran pada link berikut:
+https://invitation.evolvion.biz.id/${attendee.is_amplop ? "digital-wedding-invitation" : "digital-wedding-invitation2"}?nomorhp=${attendee.phone_number}
 
-                      Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.
 
-                      Terima kasih
+Terima kasih
 
-                      Kami yang berbahagia,
-                      Keluarga Bapak drh. H. Agus Dwiharjoto & Ibu drh. Hj. Siti Hanifah
-                      Keluarga Bapak H. Ade Herlambang & Ibu Hj. Eka Rini Yulianti, A.Md.
-                      Fio & Anggi`;
+Kami yang berbahagia,
+Keluarga Bapak drh. H. Agus Dwiharjoto & Ibu drh. Hj. Siti Hanifah
+Keluarga Bapak H. Ade Herlambang & Ibu Hj. Eka Rini Yulianti, A.Md.
+Fio & Anggi`;
                         navigator.clipboard.writeText(message);
                         toast("Pesan berhasil disalin", {
                           type: "success",
