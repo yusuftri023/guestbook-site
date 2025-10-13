@@ -5,33 +5,43 @@ import Link from "next/link";
 export default function InvitationButton({
   nomorHP,
   attendee,
+  showText = true,
 }: {
   nomorHP: string;
   attendee: string;
+  showText?: boolean;
 }) {
   const message = `
     Assalamu’alaikum Warahmatullahi Wabarakatuh
+    Yth. Bapak/Ibu/Saudara/i,
+    ${attendee}
 
-    Dengan penuh rasa syukur kepada Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ${attendee} sekeluarga untuk hadir dan memberikan doa restu pada acara pernikahan putra-putri kami:
+    Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan turut memberikan doa restu secara langsung dalam acara Ngunduh Mantu:
 
-    John Smith
-    &
-    Jane Doe
+    apt. ARIFFIO DAVA PRIHANDOYO, S.Farm
+    Putra dari Bapak drh. H. Agus Dwiharjoto & Ibu drh. Hj. Siti Hanifah
 
-    Yang Insya Allah akan dilaksanakan pada:
+    dan
 
-    Hari/Tanggal: Minggu, 12 Oktober 2025
-    Waktu: 10.00 WIB – selesai
-    Tempat: Gedung Graha Cinta Abadi, Jakarta
+    apt. ANGGHIA CALVINA IZUMI, S.Farm
+    Putri dari Bapak H. Ade Herlambang & Ibu Hj. Eka Rini Yulianti, A.Md.
 
-    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu bagi kedua mempelai.
+    Yang akan diselenggarakan pada:
+    � Sabtu, 25 Oktober 2025
+    � 19.00 - 22.00 WIB
+    � Agis Restaurant, Kota Surabaya
 
-    Untuk informasi lengkap dan undangan digital, silakan kunjungi:
-    https://wedding.pedagang-ecommerce.site/invitation?nomorhp=${nomorHP}
+    Mohon dapat mengakses undangan dan mengisi konfirmasi kehadiran pada link berikut:
+    https://invitation.evolvion.biz.id/${showText ? "digital-wedding-invitation" : "digital-wedding-invitation2"}?nomorhp=${nomorHP}
 
-    Wassalamu’alaikum Warahmatullahi Wabarakatuh
-    Hormat kami,
-    Keluarga Besar John Smith & Jane Doe`;
+    Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.
+
+    Terima kasih
+
+    Kami yang berbahagia,
+    Keluarga Bapak drh. H. Agus Dwiharjoto & Ibu drh. Hj. Siti Hanifah
+    Keluarga Bapak H. Ade Herlambang & Ibu Hj. Eka Rini Yulianti, A.Md.
+    Fio & Anggi`;
 
   return (
     <Link

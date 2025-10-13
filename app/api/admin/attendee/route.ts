@@ -10,8 +10,15 @@ export async function POST(req: NextRequest) {
       location: string;
       phone_number: string;
       cash_amount: number;
+      is_amplop: boolean;
     } = await req.json();
-    if (!data || !data.name || !data.location || !data.phone_number) {
+    if (
+      !data ||
+      !data.name ||
+      !data.location ||
+      !data.phone_number ||
+      data.is_amplop === undefined
+    ) {
       return NextResponse.json(
         {
           code: "INVALID",

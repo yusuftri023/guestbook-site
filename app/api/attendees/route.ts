@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
             ? { contains: search, mode: "insensitive" }
             : undefined,
       },
-      take: 5,
+      take: 20,
     });
 
     return NextResponse.json(attendees, { status: 200 });

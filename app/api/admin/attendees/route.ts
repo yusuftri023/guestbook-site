@@ -6,21 +6,34 @@ import { Attendee } from "@prisma/client";
 export async function GET(req: NextRequest) {
   try {
     const search = req.nextUrl.searchParams.get("search") || "";
+    const filter = req.nextUrl.searchParams.get("filter") || "all";
     const attendees = await prisma.attendee.findMany({
       where: {
         name:
           search.length > 0
             ? { contains: search, mode: "insensitive" }
             : undefined,
+        is_present:
+          filter === "all" ? undefined : filter === "present" ? true : false,
       },
       orderBy: {
         name: "asc",
       },
     });
+    const total = await prisma.attendee.count();
 
+    const present = await prisma.attendee.count({
+      where: {
+        is_present: true,
+      },
+    });
     return NextResponse.json(
       {
         data: attendees,
+        count: {
+          total,
+          present,
+        },
       },
       { status: 200 },
     );
@@ -48,7 +61,7 @@ export async function POST(req: NextRequest) {
         "Nomor Telefon"?: string;
       }[];
     } = await req.json();
-    console.log(data);
+
     const newData = data.data.map((attendee) => ({
       name: attendee.Nama,
       location: attendee.Lokasi,

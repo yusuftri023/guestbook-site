@@ -12,10 +12,20 @@ export async function GET(
       },
       select: { id: true, name: true },
     });
+    if (!attendee?.id) {
+      return NextResponse.json(
+        {
+          code: "NOT_FOUND",
+          error: "Tamu tidak terdaftar",
+          message: "Tamu tidak terdaftar",
+        },
+        { status: 404 },
+      );
+    }
     return NextResponse.json(
       {
-        id: attendee?.id || "ID-123456",
-        name: attendee?.name ? attendee.name + " Family" : "John Doe Family",
+        id: attendee.id,
+        name: attendee.name,
       },
       { status: 200 },
     );

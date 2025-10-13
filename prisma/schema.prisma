@@ -15,6 +15,7 @@ model Attendee {
   name          String
   location      String
   phone_number  String    @unique
+  is_amplop     Boolean   @default(true)
   cash_amount   Int       @default(0)
   is_present    Boolean   @default(false)
   is_gift_taken Boolean   @default(false)

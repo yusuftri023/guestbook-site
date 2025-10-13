@@ -25,7 +25,7 @@ export default function QRComponent({ mode }: { mode: "check-in" | "gift" }) {
           </div>
         )}
         <Scanner
-          scanDelay={5000}
+          scanDelay={1000}
           paused={stop}
           onScan={(result) => {
             if (result[0].rawValue) {

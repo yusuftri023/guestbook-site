@@ -100,11 +100,11 @@ export default function DownloadCSVButton({
   };
   return (
     <button
-      className="mt-4 rounded-md bg-blue-700 px-6 py-2 font-medium text-white"
+      className="rounded-md bg-blue-700 px-6 py-2 font-medium text-white"
       onClick={handleDownloadCSV}
       type="button"
     >
-      Download Statistics
+      Download Data Tamu
     </button>
   );
 }
