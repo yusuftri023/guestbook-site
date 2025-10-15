@@ -302,6 +302,7 @@ export default function Admin() {
                     <InvitationButton
                       nomorHP={String(attendee.phone_number)}
                       attendee={attendee.name}
+                      showText={attendee.is_amplop}
                     />
                     <button
                       onClick={() => {

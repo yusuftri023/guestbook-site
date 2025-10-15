@@ -59,17 +59,21 @@ export async function POST(req: NextRequest) {
         Nama: string;
         Lokasi: string;
         "Nomor Telefon"?: string;
+        "Terima Amplop"?: "Ya" | "Tidak";
       }[];
     } = await req.json();
 
     const newData = data.data.map((attendee) => ({
       name: attendee.Nama,
       location: attendee.Lokasi,
-      phone_number: attendee["Nomor Telefon"]
-        ? attendee["Nomor Telefon"]
-        : String(Math.floor(Math.random() * 1000000000)),
+      phone_number:
+        attendee["Nomor Telefon"] !== undefined &&
+        attendee["Nomor Telefon"]?.length > 4
+          ? attendee["Nomor Telefon"]
+          : String(Math.floor(Math.random() * 1000000000)),
+      is_amplop: attendee["Terima Amplop"] === "Ya" ? true : false,
     }));
-    await prisma.attendee.deleteMany();
+    console.log(newData);
     await prisma.attendee.createMany({
       data: newData,
     });
@@ -80,6 +84,7 @@ export async function POST(req: NextRequest) {
     );
   } catch (error) {
     if (error instanceof Error) {
+      console.log(error.message);
       return NextResponse.json(
         {
           code: "ERROR",
