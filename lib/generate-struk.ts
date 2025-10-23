@@ -22,7 +22,7 @@ export async function generateStruk({ id }: { id: string }) {
   // Draw a QR code
   firstPage.drawImage(qrImage, {
     x: width / 2 - qrWidth / 2,
-    y: height / 2 - qrHeight / 2 - 10,
+    y: height / 2 - 11,
     width: qrWidth,
     height: qrHeight,
   });

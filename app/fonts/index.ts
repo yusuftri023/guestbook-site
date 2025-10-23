@@ -11,6 +11,16 @@ export const poppins = localFont({
   variable: "--font-poppins",
   display: "swap",
 });
+export const chetta = localFont({
+  src: "./ChettaVissto.otf",
+  variable: "--font-chetta",
+  display: "swap",
+});
+export const fortalesia = localFont({
+  src: "./FortalesiaPlain.otf",
+  variable: "--font-fortalesia",
+  display: "swap",
+});
 
 export const inter = Inter({
   variable: "--font-inter",

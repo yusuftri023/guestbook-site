@@ -1,4 +1,5 @@
 "use client";
+import { chetta, fortalesia } from "@/app/fonts";
 import DigitalClock from "@/components/shared/digital-clock";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -32,16 +33,35 @@ export default function WelcomeBoard() {
     setAudio(new Audio("/sounds/bell.mp3"));
   }, []);
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 text-center">
-      <h1 className="text-4xl font-bold text-gray-800">
-        Selamat Datang di Acara kami saudara/i
-      </h1>
-      <h1 className="my-4 text-4xl font-bold text-gray-800">{`${currentAttendee} sekeluarga!`}</h1>
-      <p className="mt-4 text-lg text-gray-600">
-        Terima kasih telah bergabung dengan kami hari ini. Kami sangat senang
-        menyambut Anda di acara spesial ini.
-      </p>
-      <div className="absolute right-2 top-2 text-xl">
+    <div
+      className="flex min-h-screen w-full flex-col items-center justify-start bg-bottom text-center"
+      style={{
+        background:
+          "linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(/welcome-bg.JPEG) lightgray 50% / cover no-repeat",
+      }}
+    >
+      <div className="mt-[6%] rounded-lg bg-white bg-opacity-65 p-8">
+        <h2 className={`text-4xl font-bold text-gray-800 ${chetta.className}`}>
+          Selamat Datang di Acara Ngunduh Mantu
+        </h2>
+        <h2
+          className={`font-fortalesia my-4 text-4xl font-bold text-gray-800 ${fortalesia.className}`}
+        >
+          FIO & ANGGI
+        </h2>
+        <h2
+          className={`my-4 text-4xl font-bold text-gray-800 ${chetta.className}`}
+        >
+          {`Bapak/Ibu/Saudara/i`}
+        </h2>
+        <h2
+          className={`my-4 text-4xl font-bold text-gray-800 ${chetta.className}`}
+        >
+          {`${currentAttendee}`}
+        </h2>
+      </div>
+
+      <div className="absolute right-2 top-2 rounded-lg bg-white bg-opacity-50 p-2 text-xl">
         <DigitalClock />
       </div>
     </div>

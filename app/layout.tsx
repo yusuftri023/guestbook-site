@@ -1,7 +1,7 @@
 import Footer from "@/components/layout/footer";
 
 import ClientProviders from "../components/layout/ClientProviders";
-import { inter, poppins } from "./fonts";
+import { chetta, fortalesia, inter, poppins } from "./fonts";
 import "./globals.css";
 import Script from "next/script";
 
