@@ -40,28 +40,30 @@ export default function WelcomeBoard() {
           "linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(/welcome-bg.JPEG) lightgray 50% / cover no-repeat",
       }}
     >
-      <div className="mt-[6%] rounded-lg bg-white bg-opacity-65 p-8">
-        <h2 className={`text-4xl font-bold text-gray-800 ${chetta.className}`}>
+      <div className="mt-[6%] rounded-lg bg-white bg-opacity-65 p-4 md:p-8">
+        <h2
+          className={`text-2xl font-bold text-gray-800 md:text-4xl ${chetta.className}`}
+        >
           Selamat Datang di Acara Ngunduh Mantu
         </h2>
         <h2
-          className={`font-fortalesia my-4 text-4xl font-bold text-gray-800 ${fortalesia.className}`}
+          className={`font-fortalesia my-4 text-2xl font-bold text-gray-800 md:text-4xl ${chetta.className}`}
         >
           FIO & ANGGI
         </h2>
         <h2
-          className={`my-4 text-4xl font-bold text-gray-800 ${chetta.className}`}
+          className={`my-4 text-2xl font-bold text-gray-800 md:text-4xl ${chetta.className}`}
         >
           {`Bapak/Ibu/Saudara/i`}
         </h2>
         <h2
-          className={`my-4 text-4xl font-bold text-gray-800 ${chetta.className}`}
+          className={`my-4 text-2xl font-bold text-gray-800 md:text-4xl ${chetta.className}`}
         >
           {`${currentAttendee}`}
         </h2>
       </div>
 
-      <div className="absolute right-2 top-2 rounded-lg bg-white bg-opacity-50 p-2 text-xl">
+      <div className="fixed bottom-4 right-4 rounded-lg bg-white bg-opacity-50 p-2 text-xl md:bottom-8 md:right-8">
         <DigitalClock />
       </div>
     </div>
