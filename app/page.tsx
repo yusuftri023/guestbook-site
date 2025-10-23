@@ -33,16 +33,11 @@ export default function Home() {
           Layar datang
         </button>
       </Link>
-      {/*<Link href={"/board/farewell"}>
+      <Link href={"/attendees-count"}>
         <button className="w-[300px] rounded-md bg-blue-500 px-4 py-3 text-xl text-white">
-          Layar pulang
+          Check Jumlah Hadir
         </button>
       </Link>
-      <Link href={"/board/message"}>
-        <button className="w-[300px] rounded-md bg-blue-500 px-4 py-3 text-xl text-white">
-          Layar pesan tamu
-        </button>
-      </Link>*/}
     </div>
   );
 }

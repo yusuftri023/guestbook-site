@@ -274,6 +274,24 @@ export default function Admin() {
           >
             Tambah Tamu
           </button>
+          <button
+            onClick={() => {
+              axios
+                .put(`/api/admin/reset`, {})
+                .then(() => {
+                  toast("Berhasil mereset absensi", { type: "success" });
+                })
+                .catch(() => {
+                  toast("Gagal mengedit data", { type: "error" });
+                })
+                .finally(() => {
+                  fetchData();
+                });
+            }}
+            className="mt-4 w-full rounded-md bg-red-600 px-4 py-2 text-center text-white"
+          >
+            Reset Absensi Tamu
+          </button>
           {searchResult.length === 0 ? (
             <div className="mt-4">
               <p className="text-lg text-gray-600">
